@@ -1,0 +1,48 @@
+
+.padding {
+	padding: 1em;
+}
+
+.landing-title {
+	text-align: center;
+	font-size: 8em;
+}
+
+.landing-input {
+	width: 100%;
+	font-size: 8em;
+	text-align: center;
+}
+
+.landing-textbox {
+	border-style: none;
+	border-bottom-style: solid;
+	border-bottom-width: 0.1rem;
+}
+
+.landing-submit {
+	background-color: white;
+	color: black;
+	font-weight: 100;
+}
+
+.landing-submit:hover, .landing-submit:focus{
+	color: gray;
+}
+
+.landing-input:focus {
+	outline: 0;
+	border-bottom-width: 0.2rem;
+}
+
+.margin-top {
+	margin-top: 20rem;
+}
+
+.not-found-title {
+	font-size: 20em;
+}
+
+.not-found-subtitle {
+	text-align: center;
+}

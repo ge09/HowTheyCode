@@ -16,14 +16,14 @@ app.use(bodyParser.json());
 app.use(compress());
 app.use(cors());
 
-
 var router = express.Router();
-app.get('/', function(req, res) {
-            res.send("hello");
-        });
 
+app.use(express.static(__dirname + '/client'));
+app.get('/', function(req, res) {
+    	res.sendFile('./client/index.html', {"root": __dirname});
+    });
 
 
 app.listen(port, function() {
   console.log("HowTheyCode server running on http://localhost:3000");
-});
+	});
