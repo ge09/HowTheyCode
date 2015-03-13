@@ -4,11 +4,19 @@ var mongoose = require('mongoose'),
 var companySchema = new Schema({
   	name:    		{ type: String },
   	locationText: 	{ type: String},
-  	locationData: 	{ type: {
-  		k: Number,
-  		d: Number
-  	}},
-  	surveys: 		[{ type: Schema.Types.ObjectId, ref: 'Survey' }]
+  	locationData: 	{ type:
+  		{
+	  		k: Number,
+	  		d: Number
+	  	}
+  	},
+  	surveys: 		[
+  		{
+		  	date: 		{ type: Date },
+		  	answers: 	[{ type: Boolean}],
+		  	value: 		{ type: Number}
+		}
+  	]
 });
 
 module.exports = mongoose.model('Company', companySchema);

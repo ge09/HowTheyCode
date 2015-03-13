@@ -22,14 +22,16 @@ mongoose.connect('mongodb://localhost/howtc', function(err, res) {
 });
 
 var events = require('./models/Company')(app, mongoose);
-var events = require('./models/Survey')(app, mongoose);
 
-var router = express.Router();
+var CompanyCtrl = require('./controllers/CompanyCtrl');
 
 app.use(express.static(__dirname + '/client'));
 app.get('/', function(req, res) {
     	res.sendFile('./client/index.html', {"root": __dirname});
     });
+
+app.get('/api/companies', CompanyCtrl.findCompanies);
+app.post('/api/companies', CompanyCtrl.addCompany);
 
 
 app.listen(port, function() {
