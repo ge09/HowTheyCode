@@ -16,6 +16,14 @@ app.use(bodyParser.json());
 app.use(compress());
 app.use(cors());
 
+mongoose.connect('mongodb://localhost/howtc', function(err, res) {
+    if(err) throw err;
+    console.log('Connected to HowTheyCode Database');
+});
+
+var events = require('./models/Company')(app, mongoose);
+var events = require('./models/Survey')(app, mongoose);
+
 var router = express.Router();
 
 app.use(express.static(__dirname + '/client'));
@@ -25,5 +33,5 @@ app.get('/', function(req, res) {
 
 
 app.listen(port, function() {
-  console.log("HowTheyCode server running on http://localhost:3000");
+  console.log("HowTheyCode server running on http://localhost:" + port);
 	});
