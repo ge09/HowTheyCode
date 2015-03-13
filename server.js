@@ -32,6 +32,9 @@ app.get('/', function(req, res) {
 
 app.get('/api/companies', CompanyCtrl.findCompanies);
 app.post('/api/companies', CompanyCtrl.addCompany);
+app.put('/api/companies/:id', CompanyCtrl.updateCompany);
+app.get('/api/companies/:id', CompanyCtrl.findCompanyById);
+app.delete('/api/companies/:id', CompanyCtrl.deleteCompany);
 
 
 app.listen(port, function() {
