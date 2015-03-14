@@ -26,7 +26,7 @@ howtc.config(['$routeProvider', '$locationProvider',
             controller: 'NewCompanyCtrl'
         });
 
-        $routeProvider.when('/:companyId', {
+        $routeProvider.when('/company/:companyId', {
             templateUrl: 'partials/company_details.html',
             controller: 'CompanyDetailsCtrl'
         });

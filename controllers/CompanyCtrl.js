@@ -15,7 +15,6 @@ exports.findCompanies = function(req, res) {
 exports.addCompany= function(req, res) {
     console.log('POST');
     
-
     var company = new Company({
         name: 	req.body.name
     });

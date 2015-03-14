@@ -10,7 +10,7 @@ howtc.controller('NewCompanyCtrl', ['$scope', '$window', 'CompanyService',
 				.success(function(data) {
 					console.log(data);
 					$scope.company.name = "";
-					$window.location.href = '#/' + data._id;
+					$window.location.href = '#/company/' + data._id;
 				}).error(function() {
 					console.log(error);
 				});
