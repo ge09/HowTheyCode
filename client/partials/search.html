@@ -1,5 +1,23 @@
 
+
+
+
+<div class="row" ng-show="companies.length==0">
+	<h2 class="centered-text">Ups! We couldn't find anything. Try to find something else, or just add a new company.</h2>
+	<form class="form-horizontal">
+		<fieldset>
+			<div class="col-xs-10 col-xs-offset-1">
+				<input ng-model="searchText" class="landing-input landing-textbox" placeholder="You know, type" type="text">
+			</div>
+			<div class="col-xs-10 col-xs-offset-1">
+        		<a ng-disabled="!searchText" href="#/search/{{searchText}}" type="submit" class="btn btn-secondary landing-input landing-submit">Try again</a>
+			</div>
+		</fieldset>
+	</form>
+</div>
+
 <div class="row">
+
 	<div class="jumbotron padding col-xs-10 col-xs-offset-1" ng-repeat="company in companies">
 		<h2>{{company.name}}</h2>
 		<h4>{{company.locationText}}</h4>
