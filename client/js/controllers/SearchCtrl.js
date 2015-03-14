@@ -1,3 +1,4 @@
+
 howtc.controller('SearchCtrl', ['$scope', 'CompanyService', function ($scope, CompanyService) {
 
 	var getAllCompanies = function() {

@@ -1,0 +1,18 @@
+
+<form class="form-horizontal margin-top-short">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-xs-10 col-xs-offset-1">
+        <input type="text" ng-model="company.name" class="form-control centered-text regular-input" id="inputName" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-10 col-xs-offset-1">
+        <button ng-disabled="company.name == ''" ng-click="saveCompany()" class="btn btn-primary regular-button">Save</button>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <a href="#/"><button class="btn btn-default regular-button">Cancel</button></a>
+      </div>
+    </div>
+  </fieldset>
+</form>

@@ -43,10 +43,35 @@
 	margin-top: 20rem;
 }
 
+.margin-top-short {
+	margin-top: 10rem;
+}
+
 .not-found-title {
 	font-size: 20em;
 }
 
 .not-found-subtitle {
 	text-align: center;
+}
+
+.centered-text {
+	text-align: center;
+}
+
+.regular-input, .regular-input:focus {
+	font-size: 3rem;
+	border-style: none;
+	border-bottom-style: solid;
+	box-shadow: none;
+}
+
+.regular-input:focus {
+	outline: 0;
+}
+
+.regular-button {
+	width: 100%;
+	height: 5em;
+	margin-top: 2em;
 }
