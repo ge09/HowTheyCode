@@ -31,6 +31,11 @@ howtc.config(['$routeProvider', '$locationProvider',
             controller: 'CompanyDetailsCtrl'
         });
 
+        $routeProvider.when('/new-survey/:companyId', {
+            templateUrl: 'partials/new_survey.html',
+            controller: 'NewSurveyCtrl'
+        });
+
         $routeProvider.when('/404', {
             templateUrl: 'partials/404.html',
             controller: '404Ctrl'
@@ -40,7 +45,5 @@ howtc.config(['$routeProvider', '$locationProvider',
             redirectTo: '/404'
 
         });
-
-        // $locationProvider.html5Mode(true);
         
   }]);

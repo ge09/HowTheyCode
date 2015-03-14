@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width", initial-scale=1.0/>
         <title>Mi App Web</title>
 
-        <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>   
 
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
         <link rel="stylesheet" href="css/style.css" />
@@ -16,6 +15,8 @@
     <body>
 
         <div ng-view></div>
+
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
            
         <!-- AngularJS core -->
         <script src="js/vendor/angular.min.js"></script>
@@ -31,12 +32,12 @@
         <script src="js/controllers/SearchCtrl.js"></script>
         <script src="js/controllers/NewCompanyCtrl.js"></script>
         <script src="js/controllers/CompanyDetailsCtrl.js"></script>
+        <script src="js/controllers/NewSurveyCtrl.js"></script>
 
         <script src="js/services/CompanyService.js"></script>
+        <script src="js/services/SurveyQuestionsService.js"></script>
 
         <script src="js/filters.js"></script>
-
-    
         
     </body>
 
