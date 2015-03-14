@@ -4,7 +4,7 @@
 var howtc = angular.module('howtc', ['ngRoute', 'ngAutocomplete', 'uiGmapgoogle-maps', 'datePicker']);
 
 var options = {
-    apiBaseUrl: 'http://localhost:3000/api'
+    apiBaseUrl: 'https://localhost:3000/api'
 };
 
 howtc.config(['$routeProvider', '$locationProvider',
