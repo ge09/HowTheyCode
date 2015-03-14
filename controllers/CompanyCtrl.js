@@ -38,7 +38,7 @@ exports.findCompanyById = function(req, res) {
 
 exports.findCompaniesByName = function(req, res) {
     var text = req.params.searchText;
-    Company.find({name: new RegExp(text)}, function(err, company) {
+    Company.find({name: new RegExp(text,'i')}, function(err, company) {
         if(err) return res.send(500, err.message);
 
         console.log('GET /companies/search/' + req.params.searchText);

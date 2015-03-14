@@ -1,1 +1,9 @@
-<h1>{{company.name}}</h1>
+<h1 class="landing-title">{{company.name}}</h1>
+
+<h3 class="centered-text">{{company.locationText}}</h3>
+
+<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+	<ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+      </ui-gmap-marker>
+</ui-gmap-google-map>
+

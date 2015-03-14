@@ -7,7 +7,7 @@
 				<input ng-model="searchText" class="landing-input landing-textbox" placeholder="Just type, dude" type="text">
 			</div>
 			<div class="col-xs-10 col-xs-offset-1">
-        		<a ng-disabled="searchText == ''" href="#/search/{{searchText}}" type="submit" class="btn btn-secondary landing-input landing-submit">Let's have a look</a>
+        		<a ng-disabled="!searchText" href="#/search/{{searchText}}" type="submit" class="btn btn-secondary landing-input landing-submit">Let's have a look</a>
 			</div>
 		</fieldset>
 	</form>
