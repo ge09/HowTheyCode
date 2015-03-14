@@ -42,6 +42,7 @@ app.get('/', function(req, res) {
     });
 
 router.get('/api/companies', CompanyCtrl.findCompanies);
+router.get('/api/companies/search/:searchText', CompanyCtrl.findCompaniesByName);
 router.post('/api/companies', CompanyCtrl.addCompany);
 router.put('/api/companies/:id', CompanyCtrl.updateCompany);
 router.get('/api/companies/:id', CompanyCtrl.findCompanyById);

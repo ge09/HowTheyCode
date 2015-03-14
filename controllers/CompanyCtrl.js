@@ -36,6 +36,16 @@ exports.findCompanyById = function(req, res) {
     });
 };
 
+exports.findCompaniesByName = function(req, res) {
+    var text = req.params.searchText;
+    Company.find({name: new RegExp(text)}, function(err, company) {
+        if(err) return res.send(500, err.message);
+
+        console.log('GET /companies/search/' + req.params.searchText);
+        res.status(200).jsonp(company);
+    });
+};
+
 exports.updateCompany = function(req, res) {
 	console.log('PUT');
 	Company.findById(req.params.id, function(err, company) {

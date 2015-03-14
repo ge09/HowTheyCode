@@ -16,7 +16,7 @@ howtc.config(['$routeProvider', '$locationProvider',
             controller: 'LandingCtrl'
         });
 
-        $routeProvider.when('/search', {
+        $routeProvider.when('/search/:searchText', {
             templateUrl: 'partials/search.html',
             controller: 'SearchCtrl'
         });

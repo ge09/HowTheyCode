@@ -12,6 +12,9 @@ howtc.service('CompanyService', ['$http',
 			},
 			saveCompany: function(company) {
 				return $http.post(companyApi, company);
+			},
+			findCompanies: function(searchText) {
+				return $http.get(companyApi + '/search/' + searchText);
 			}
 		}
 }]);

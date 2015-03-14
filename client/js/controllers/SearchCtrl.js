@@ -1,14 +1,15 @@
 
-howtc.controller('SearchCtrl', ['$scope', 'CompanyService', function ($scope, CompanyService) {
+howtc.controller('SearchCtrl', ['$scope', 'CompanyService', '$routeParams',
+	function ($scope, CompanyService, $routeParams) {
 
-	var getAllCompanies = function() {
-		CompanyService.getAllCompanies().success(function(data) {
-			$scope.companies = data;
-		}).error(function(error) {
-			console.log(error);
-		});
-	};
+		var findCompanies = function(searchText) {
+			CompanyService.findCompanies(searchText).success(function(data) {
+				$scope.companies = data;
+			}).error(function(error) {
+				console.log(error);
+			});
+		};
 
-	getAllCompanies();
+		findCompanies($routeParams.searchText);
 
 }]);
