@@ -3,6 +3,10 @@
 	padding: 1em;
 }
 
+.margin {
+	margin: 1em;
+}
+
 .landing-title {
 	text-align: center;
 	font-size: 8em;

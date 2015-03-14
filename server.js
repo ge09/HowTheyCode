@@ -25,16 +25,27 @@ var events = require('./models/Company')(app, mongoose);
 
 var CompanyCtrl = require('./controllers/CompanyCtrl');
 
+var router = express.Router();
+app.use(router);
+
+// CORS header securiy
+router.all('/*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-type, Accept, Authorization");
+    next();
+});
+
 app.use(express.static(__dirname + '/client'));
 app.get('/', function(req, res) {
     	res.sendFile('./client/index.html', {"root": __dirname});
     });
 
-app.get('/api/companies', CompanyCtrl.findCompanies);
-app.post('/api/companies', CompanyCtrl.addCompany);
-app.put('/api/companies/:id', CompanyCtrl.updateCompany);
-app.get('/api/companies/:id', CompanyCtrl.findCompanyById);
-app.delete('/api/companies/:id', CompanyCtrl.deleteCompany);
+router.get('/api/companies', CompanyCtrl.findCompanies);
+router.post('/api/companies', CompanyCtrl.addCompany);
+router.put('/api/companies/:id', CompanyCtrl.updateCompany);
+router.get('/api/companies/:id', CompanyCtrl.findCompanyById);
+router.delete('/api/companies/:id', CompanyCtrl.deleteCompany);
 
 
 app.listen(port, function() {

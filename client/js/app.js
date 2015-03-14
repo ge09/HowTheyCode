@@ -3,6 +3,9 @@
 // Declare app level module
 var howtc = angular.module('howtc', ['ngRoute']);
 
+var options = {
+    apiBaseUrl: 'http://localhost:3000/api'
+};
 
 howtc.config(['$routeProvider', '$locationProvider',
 
