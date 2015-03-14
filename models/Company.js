@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 
 var companySchema = new Schema({
   	name:    		{ type: String },
+    companyScore: { type: Number },
   	locationText: 	{ type: String},
   	locationData: 	{ type:
   		{
@@ -14,7 +15,7 @@ var companySchema = new Schema({
   		{
 		  	date: 		{ type: Date },
 		  	answers: 	[{ type: Boolean}],
-		  	value: 		{ type: Number}
+		  	score: 		{ type: Number}
 		}
   	]
 });
