@@ -16,7 +16,8 @@ app.use(bodyParser.json());
 app.use(compress());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/howtc', function(err, res) {
+var mongoUrl = process.env.MONGOLAB_URL || 'mongodb://localhost/howtc';
+mongoose.connect(mongoUrl, function(err, res) {
     if(err) throw err;
     console.log('Connected to HowTheyCode Database');
 });
