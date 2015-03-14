@@ -59,12 +59,43 @@ exports.updateCompany = function(req, res) {
 };
 
 exports.deleteCompany = function(req, res) {
-	console.log('DELETE');
+    console.log('DELETE');
 
-	Company.findById(req.params.id, function(err, company) {
-		company.remove(function(err) {
-			if(err) return res.send(500, err.message);
-			res.status(200);
-		});
-	});
+    Company.findById(req.params.id, function(err, company) {
+        company.remove(function(err) {
+            if(err) return res.send(500, err.message);
+            res.status(200);
+        });
+    });
+};
+
+exports.addSurveyToCompany = function(req, res) {
+    console.log('PUT');
+
+    Company.findById(req.params.id, function(err, company) {
+        console.log(req.body);
+        var survey = {
+            answers: req.body,
+            value: getSurveyResult(req.body),
+            date: new Date()
+        };
+        console.log(company);
+        company.surveys.push(survey);
+
+        company.save(function(err) {
+            if(err) return res.send(500, err.message);
+            res.status(200).jsonp(company);
+        });
+    });
+};
+
+
+// PRIVATE
+
+var getSurveyResult = function(answers) {
+    var result = 0;
+    for(var i = 0; i < answers.length; i++) {
+        if (answers[i]) result++;
+    }
+    return result;
 };

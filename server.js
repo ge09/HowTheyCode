@@ -44,9 +44,10 @@ app.get('/', function(req, res) {
 router.get('/api/companies', CompanyCtrl.findCompanies);
 router.get('/api/companies/search/:searchText', CompanyCtrl.findCompaniesByName);
 router.post('/api/companies', CompanyCtrl.addCompany);
-router.put('/api/companies/:id', CompanyCtrl.updateCompany);
 router.get('/api/companies/:id', CompanyCtrl.findCompanyById);
 router.delete('/api/companies/:id', CompanyCtrl.deleteCompany);
+router.put('/api/companies/:id', CompanyCtrl.addSurveyToCompany);
+
 
 
 app.listen(port, function() {

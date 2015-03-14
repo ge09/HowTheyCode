@@ -22,8 +22,14 @@ howtc.controller('NewSurveyCtrl', ['$scope', '$routeParams', 'CompanyService', '
 		};
 
 		$scope.saveSurvey = function() {
-			console.log("HOLA");
 			console.log($scope.survey);
+
+			CompanyService.addSurveyToCompany($scope.survey)
+				.success(function(data) {
+					//TODO - make stuff happen
+				}).error(function(err) {
+					console.log(err);
+				});
 		};
 
 		getCompany($routeParams.companyId);
