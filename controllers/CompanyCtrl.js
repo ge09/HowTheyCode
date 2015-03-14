@@ -34,7 +34,7 @@ exports.findCompanyById = function(req, res) {
     Company.findById(req.params.id, function(err, company) {
         if(err) return res.send(500, err.message);
 
-            company.score = getCompanyScore(company.surveys);
+        company.companyScore = getCompanyScore(company.surveys);
 
         console.log('GET /companies/' + req.params.id);
         res.status(200).jsonp(company);
@@ -82,10 +82,11 @@ exports.addSurveyToCompany = function(req, res) {
     console.log('PUT');
 
     Company.findById(req.params.id, function(err, company) {
+        if (!req.body.date) req.body.date = new Date();
         var survey = {
-            answers: req.body,
-            score: getSurveyScore(req.body),
-            date: new Date()
+            answers: req.body.answers,
+            score: getSurveyScore(req.body.answers),
+            date: req.body.date
         };
         company.surveys.push(survey);
 
@@ -126,8 +127,6 @@ var getMultipleCompaniesWithScores = function(companies) {
     for (var i = 0; i < companies.length; i++) {
         console.log(getCompanyScore(companies[i].surveys));
         companies[i].companyScore = getCompanyScore(companies[i].surveys);
-        console.log(companies[i].companyScore);
-        console.log(companies[i]);
     }
     return companies;
 };

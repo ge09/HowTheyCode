@@ -1,3 +1,6 @@
+.app-view {
+	height: 90vh;
+}
 
 .padding {
 	padding: 1em;
@@ -83,4 +86,39 @@
 
 .container {
 	margin-top: 6rem;
+}
+
+.datepicker {
+	width: 200px;
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+
+.navbar-bottom {
+	height: 10vh;
+	background-color: #28364f;
+	color:#FFFFFF;
+}
+
+.footer-link, .footer-link:hover {
+	color: white;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.landing-title {
+		font-size: 5em;
+	}
+
+	.landing-input {
+		font-size: 5em;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.landing-input {
+		font-size: 3em;
+	}
 }

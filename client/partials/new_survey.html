@@ -4,7 +4,16 @@
 
 <h2 class="centered-text">Survey</h2>
 
+
+
 <div class="container">
+	<h3 class="centered-text">When did you stop working for this company?</h3>
+	<h4 class="centered-text">If you still work there, just set the current date.</h4>
+	<div class="datepicker" date-picker="start" ng-model="survey.date" min-view="date"></div>
+
+
+	<h3 class="centered-text margin-top-short">Tell us about them.</h3>
+
 	<div class="centered-text">
 		<h3>{{questions[0]}}</h3>
 		<input type="checkbox" ng-model="survey.answers[0]">
@@ -58,4 +67,8 @@
 
 <div class="row">
 <button ng-click="saveSurvey()" class="btn btn-secondary landing-input landing-submit">Send</button>
+</div>
+
+<div class="col-xs-10 col-xs-offset-1">
+    <button type="submit" ng-click="goBack()" class="btn btn-secondary landing-input landing-submit">Go back</button>
 </div>

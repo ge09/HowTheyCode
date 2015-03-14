@@ -1,9 +1,10 @@
-howtc.controller('NewSurveyCtrl', ['$scope', '$routeParams', 'CompanyService', 'SurveyQuestionsService',
-	function ($scope, $routeParams, CompanyService, SurveyQuestionsService) {
+howtc.controller('NewSurveyCtrl', ['$scope', '$routeParams', 'CompanyService', 'SurveyQuestionsService', '$window',
+	function ($scope, $routeParams, CompanyService, SurveyQuestionsService, $window) {
 
 		$scope.survey = {
 			companyId: $routeParams.companyId,
-			answers: [false, false, false, false, false, false, false, false,  false, false, false, false]
+			answers: [false, false, false, false, false, false, false, false,  false, false, false, false],
+			date: new Date()
 		};
 
 		var getCompany = function(id) {
@@ -26,10 +27,14 @@ howtc.controller('NewSurveyCtrl', ['$scope', '$routeParams', 'CompanyService', '
 
 			CompanyService.addSurveyToCompany($scope.survey)
 				.success(function(data) {
-					//TODO - make stuff happen
+					$window.history.back();
 				}).error(function(err) {
 					console.log(err);
 				});
+		};
+
+		$scope.goBack = function() {
+			$window.history.back();
 		};
 
 		getCompany($routeParams.companyId);

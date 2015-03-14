@@ -19,5 +19,9 @@ howtc.controller('NewCompanyCtrl', ['$scope', '$window', 'CompanyService',
 					console.log(error);
 				});
 		};
+
+		$scope.goBack = function() {
+			$window.history.back();
+		};
 	
 }])

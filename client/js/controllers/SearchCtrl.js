@@ -1,6 +1,6 @@
 
-howtc.controller('SearchCtrl', ['$scope', 'CompanyService', '$routeParams',
-	function ($scope, CompanyService, $routeParams) {
+howtc.controller('SearchCtrl', ['$scope', 'CompanyService', '$routeParams', '$window',
+	function ($scope, CompanyService, $routeParams, $window) {
 
 		var findCompanies = function(searchText) {
 			CompanyService.findCompanies(searchText).success(function(data) {
@@ -9,6 +9,11 @@ howtc.controller('SearchCtrl', ['$scope', 'CompanyService', '$routeParams',
 				console.log(error);
 			});
 		};
+
+		$scope.goBack = function() {
+			$window.history.back();
+		};
+    
 
 		findCompanies($routeParams.searchText);
 

@@ -4,6 +4,7 @@ howtc.controller('CompanyDetailsCtrl', ['$scope', '$routeParams', 'CompanyServic
 		var getCompany = function(id) {
 			CompanyService.getCompany(id)
 				.success(function(data) {
+					console.log(data);
 					$scope.company = data;
 					setMap($scope.company.locationData.lat, $scope.company.locationData.lon);
 				})
@@ -22,6 +23,10 @@ howtc.controller('CompanyDetailsCtrl', ['$scope', '$routeParams', 'CompanyServic
 				    longitude: lon
 			    }
 			};
+		};
+
+		$scope.goBack = function() {
+			$window.history.back();
 		};
     
 

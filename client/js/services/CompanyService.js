@@ -17,7 +17,7 @@ howtc.service('CompanyService', ['$http',
 				return $http.get(companyApi + '/search/' + searchText);
 			},
 			addSurveyToCompany: function(survey) {
-				return $http.put(companyApi + '/' + survey.companyId, survey.answers);
+				return $http.put(companyApi + '/' + survey.companyId, survey);
 			}
 		}
 }]);

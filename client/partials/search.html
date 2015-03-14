@@ -3,7 +3,9 @@
 
 
 <div class="row" ng-show="companies.length==0">
-	<h2 class="centered-text">Ups! We couldn't find anything. Try to find something else, or just add a new company.</h2>
+<div class="row">
+	<h2 class="centered-text col-xs-10 col-xs-offset-1">Ups! We couldn't find anything. Try to find something else, or just add a new company.</h2>
+	</div>
 	<form class="form-horizontal">
 		<fieldset>
 			<div class="col-xs-10 col-xs-offset-1">
@@ -30,3 +32,8 @@
 <div class="row">
 	<a href="#/new" class="btn btn-secondary landing-input landing-submit">Add new company</a>
 </div>
+
+<div class="col-xs-10 col-xs-offset-1">
+    <button type="submit" ng-click="goBack()" class="btn btn-secondary landing-input landing-submit">Go back</button>
+</div>
+
