@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module
-var howtc = angular.module('howtc', ['ngRoute']);
+var howtc = angular.module('howtc', ['ngRoute', 'ngAutocomplete']);
 
 var options = {
     apiBaseUrl: 'http://localhost:3000/api'

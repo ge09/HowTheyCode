@@ -6,8 +6,8 @@ var companySchema = new Schema({
   	locationText: 	{ type: String},
   	locationData: 	{ type:
   		{
-	  		k: Number,
-	  		d: Number
+	  		lat: Number,
+	  		lon: Number
 	  	}
   	},
   	surveys: 		[

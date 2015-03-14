@@ -6,6 +6,10 @@ howtc.controller('NewCompanyCtrl', ['$scope', '$window', 'CompanyService',
 		};
 
 		$scope.saveCompany = function(){
+			$scope.company.locationData = {
+				lat: $scope.locationRaw.geometry.location.k,
+				lon: $scope.locationRaw.geometry.location.D
+			};
 			CompanyService.saveCompany($scope.company)
 				.success(function(data) {
 					console.log(data);

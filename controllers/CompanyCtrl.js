@@ -16,7 +16,9 @@ exports.addCompany= function(req, res) {
     console.log('POST');
     
     var company = new Company({
-        name: 	req.body.name
+        name: req.body.name,
+        locationText: req.body.locationText,
+        locationData: req.body.locationData,
     });
 
     company.save(function(err, company) {
