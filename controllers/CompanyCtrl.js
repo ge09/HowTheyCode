@@ -44,13 +44,13 @@ exports.findCompanyById = function(req, res) {
 exports.findCompaniesByName = function(req, res) {
     console.log('GET');
     var text = req.params.searchText;
-    Company.find({name: new RegExp(text,'i')}, function(err, company) {
+    Company.find({name: new RegExp(text,'i')}, function(err, companies) {
         if(err) return res.send(500, err.message);
 
         companies = getMultipleCompaniesWithScores(companies);
 
         console.log('GET /companies/search/' + req.params.searchText);
-        res.status(200).jsonp(company);
+        res.status(200).jsonp(companies);
     });
 };
 
