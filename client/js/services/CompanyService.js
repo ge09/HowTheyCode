@@ -7,6 +7,9 @@ howtc.service('CompanyService', ['$http',
 			getAllCompanies: function() {
 				return $http.get(companyApi);
 			},
+			getCompany: function(id) {
+				return $http.get(companyApi + '/' + id);
+			},
 			saveCompany: function(company) {
 				return $http.post(companyApi, company);
 			}

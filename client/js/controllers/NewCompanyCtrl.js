@@ -1,6 +1,6 @@
 
-howtc.controller('NewCompanyCtrl', ['$scope', 'CompanyService',
-	function ($scope, CompanyService) {
+howtc.controller('NewCompanyCtrl', ['$scope', '$window', 'CompanyService',
+	function ($scope, $window, CompanyService) {
 		$scope.company = {
 			name: ""
 		};
@@ -10,7 +10,7 @@ howtc.controller('NewCompanyCtrl', ['$scope', 'CompanyService',
 				.success(function(data) {
 					console.log(data);
 					$scope.company.name = "";
-					//TODO - go to company's details view
+					$window.location.href = '#/' + data._id;
 				}).error(function() {
 					console.log(error);
 				});
