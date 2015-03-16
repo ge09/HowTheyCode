@@ -14,4 +14,4 @@ Pending work:
 - [ ] improve company score measurement algorithm (date-score relationship is causing some problems)
 
 
-Site: [HowTheyCode](https://howtheycode.herokuapp.com])
+Site: [HowTheyCode](https://howtheycode.herokuapp.com)
