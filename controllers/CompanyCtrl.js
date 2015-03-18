@@ -7,7 +7,7 @@ exports.findCompanies = function(req, res) {
         if(err) res.send(500, err.message);
 
         companies = getMultipleCompaniesWithScores(companies);
-
+        companies = sortCompanies(companies);
         console.log('GET /companies')
         res.status(200).jsonp(companies);
     });
@@ -48,6 +48,7 @@ exports.findCompaniesByName = function(req, res) {
         if(err) return res.send(500, err.message);
 
         companies = getMultipleCompaniesWithScores(companies);
+        companies = sortCompanies(companies);
 
         console.log('GET /companies/search/' + req.params.searchText);
         res.status(200).jsonp(companies);
@@ -130,3 +131,21 @@ var getMultipleCompaniesWithScores = function(companies) {
     }
     return companies;
 };
+
+var sortCompanies = function(companies) {
+    var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < companies.length-1; i++) {
+            if (companies[i].companyScore < companies[i+1].companyScore) {
+                var temp = companies[i];
+                companies[i] = companies[i+1];
+                companies[i+1] = temp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+
+    return companies;
+};
+

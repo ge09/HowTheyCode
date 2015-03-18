@@ -5,7 +5,7 @@ var howtc = angular.module('howtc', ['ngRoute', 'ngAutocomplete', 'uiGmapgoogle-
 
 var options = {
     // apiBaseUrl: 'https://howtheycode.herokuapp.com/api'
-    apiBaseUrl: 'http://localhost:3000/api'
+    apiBaseUrl: 'http://192.168.1.199:3000/api'
 };
 
 howtc.config(['$routeProvider', '$locationProvider',
@@ -18,6 +18,11 @@ howtc.config(['$routeProvider', '$locationProvider',
         });
 
         $routeProvider.when('/search/:searchText', {
+            templateUrl: 'partials/search.html',
+            controller: 'SearchCtrl'
+        });
+
+        $routeProvider.when('/search', {
             templateUrl: 'partials/search.html',
             controller: 'SearchCtrl'
         });

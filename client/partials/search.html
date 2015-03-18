@@ -19,12 +19,12 @@
 
 	<div class="row">
 
-		<div class="jumbotron padding col-xs-10 col-xs-offset-1" ng-repeat="company in companies">
+		<div class="jumbotron padding col-xs-10 col-xs-offset-1" ng-repeat="company in companies | orderBy:company.companyScore">
 			<h2>{{company.name}}</h2>
 			<h4>{{company.companyScore | number : 2}}/12</h4>
 			<h4>{{company.locationText}}</h4>
-			<a href="#/company/{{company._id}}">Details</a>
-			<a href="#/new-survey/{{company._id}}">Fill the survey</a>
+			<p><a href="#/company/{{company._id}}">Details</a></p>
+			<p><a href="#/new-survey/{{company._id}}">Fill the survey</a></p>
 		</div>
 	</div>
 

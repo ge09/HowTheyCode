@@ -63,6 +63,10 @@
 	margin-top: 10rem;
 }
 
+.margin-top-tiny {
+	margin-top: 5rem;
+}
+
 .not-found-title {
 	font-size: 20em;
 }
