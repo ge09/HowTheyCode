@@ -21,6 +21,10 @@
 	</div>
 
 	<div class="row">
+		<div class="loading-spinner" ng-show="loading"></div>
+	</div>
+
+	<div class="row">
 
 		<div class="jumbotron padding col-xs-10 col-xs-offset-1" ng-repeat="company in companies | orderBy:company.companyScore">
 			<h2>{{company.name}}</h2>
