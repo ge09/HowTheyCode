@@ -4,7 +4,8 @@
 var howtc = angular.module('howtc', ['ngRoute', 'ngAutocomplete', 'uiGmapgoogle-maps', 'datePicker']);
 
 var options = {
-    apiBaseUrl: 'https://howtheycode.herokuapp.com/api'
+    // apiBaseUrl: 'https://howtheycode.herokuapp.com/api'
+    apiBaseUrl: 'http://localhost:3000/api'
 };
 
 howtc.config(['$routeProvider', '$locationProvider',
