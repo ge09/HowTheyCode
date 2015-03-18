@@ -35,6 +35,21 @@
 	color: gray;
 }
 
+.black-link {
+	width: 100%;
+	color: black;
+	font-size: 3em;	
+}
+
+.landing-link {
+	text-align: center;
+
+}
+
+.black-link:hover, .black-link:focus{
+	color: gray;
+}
+
 .landing-input:focus {
 	outline: 0;
 	border-bottom-width: 0.2rem;
@@ -103,6 +118,15 @@
 .footer-link, .footer-link:hover {
 	color: white;
 	text-decoration: none;
+}
+
+.justified-text {
+	text-align: justify;
+}
+
+ul
+{
+    list-style-type: none;
 }
 
 @media screen and (max-width: 1024px) {

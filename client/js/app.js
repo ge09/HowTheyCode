@@ -42,6 +42,11 @@ howtc.config(['$routeProvider', '$locationProvider',
             controller: '404Ctrl'
         });
 
+        $routeProvider.when('/about', {
+            templateUrl: 'partials/about.html',
+            controller: 'AboutCtrl'
+        });
+
         $routeProvider.otherwise({
             redirectTo: '/404'
 
