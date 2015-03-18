@@ -9,8 +9,7 @@ Pending work:
 - [ ] Add an 'about this' section explaining what the app is.
 - [ ] Testing
 - [ ] Captchas
-- [ ] secure api headers
-- [ ] add location based search and map visualization
+- [ ] add location based search and map visualization (CartoDB)
 - [ ] improve company score measurement algorithm (date-score relationship is causing some problems)
 
 
