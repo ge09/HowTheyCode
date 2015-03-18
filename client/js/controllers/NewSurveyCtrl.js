@@ -1,6 +1,8 @@
 howtc.controller('NewSurveyCtrl', ['$scope', '$routeParams', 'CompanyService', 'SurveyQuestionsService', '$window',
 	function ($scope, $routeParams, CompanyService, SurveyQuestionsService, $window) {
 
+		$scope.captcha = false;
+
 		$scope.survey = {
 			companyId: $routeParams.companyId,
 			answers: [false, false, false, false, false, false, false, false,  false, false, false, false],

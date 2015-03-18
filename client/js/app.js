@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module
-var howtc = angular.module('howtc', ['ngRoute', 'ngAutocomplete', 'uiGmapgoogle-maps', 'datePicker']);
+var howtc = angular.module('howtc', ['ngRoute', 'ngAutocomplete', 'uiGmapgoogle-maps', 'datePicker', 'vcRecaptcha']);
 
 var options = {
     apiBaseUrl: 'https://howtheycode.herokuapp.com/api'

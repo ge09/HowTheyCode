@@ -65,9 +65,16 @@
 		</div>
 	</div>
 
+	<div class="row margin-top-short captcha-row">
+		<div class="captcha" 
+	    vc-recaptcha
+	    key="'6LeotAMTAAAAAFVsOAMFCTDi5HCXj69rRgh7jrfJ'"
+	    on-success="captcha = true">
+	    </div>
+	</div>
 
 	<div class="row">
-	<button ng-click="saveSurvey()" class="btn btn-secondary landing-input landing-submit">Send</button>
+		<button ng-click="saveSurvey()" ng-disabled="!captcha" class="btn btn-secondary landing-input landing-submit">Send</button>
 	</div>
 
 	<div class="col-xs-10 col-xs-offset-1">
