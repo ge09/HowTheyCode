@@ -7,7 +7,6 @@ It's a software development company search app, where you can se how well (or ba
 
 Pending work:
 - [X] Add an 'about this' section explaining what the app is.
-- [ ] Testing
 - [X] Captchas
 - [ ] add location based search and map visualization (CartoDB)
 - [ ] improve company score measurement algorithm (date-score relationship is causing some problems)
